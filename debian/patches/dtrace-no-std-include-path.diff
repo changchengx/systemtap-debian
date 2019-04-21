@@ -1,0 +1,11 @@
+--- a/dtrace.in
++++ b/dtrace.in
+@@ -422,7 +422,7 @@ def main():
+         cflags = "-g " + os.environ.get("CFLAGS", "").replace('\\\n', ' ').replace('\\\r',' ')
+         # sanitize any embedded \n etc. goo; PR21063
+         retcode = call(split(cc1) + defines + includes + split(cflags) +
+-             ["-fPIC", "-I.", "-I@prefix@/include", "-c", fname, "-o",
++             ["-fPIC", "-I.", "-c", fname, "-o",
+               filename + suffix], shell=False)
+         if retcode != 0:
+             print("\"gcc " + fname + "\" failed")
